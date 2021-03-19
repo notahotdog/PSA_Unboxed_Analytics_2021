@@ -1,10 +1,28 @@
 const io = require("socket.io")();
+const express = require("express");
+const { spawn } = require("child_process"); // to run the py code
 
 io.on("connection", (client) => {
   client.on("subscribeToTimer", (interval) => {
     //Retrieve Data from backend
-    client.emit("testJsonData", "this is a test json data");
+    var largeDataSet = [];
+    const python = spawn("python", ["extractJson.py"]); //call python script
 
+    // collect data from script
+    python.stdout.on("data", function (data) {
+      console.log("Pipe data from python script ...");
+      largeDataSet.push(data);
+    });
+    // in close event we are sure that stream is from child process is closed
+    python.on("close", (code) => {
+      console.log(`child process close all stdio with code ${code}`);
+      jsonLoad = largeDataSet.join("");
+      console.log("Json Load values");
+      console.log(jsonLoad); //this.setState
+      client.emit("testJsonData", jsonLoad);
+    });
+
+    // client.emit("testJsonData", "this is a test json data");
     console.log("client is subscribing to timer with interval ", interval);
     setInterval(() => {
       client.emit("timer", new Date());
