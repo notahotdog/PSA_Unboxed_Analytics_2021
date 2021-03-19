@@ -6,7 +6,8 @@ io.on("connection", (client) => {
   client.on("subscribeToTimer", (interval) => {
     //Retrieve Data from backend
     var largeDataSet = [];
-    const python = spawn("python", ["extractJson.py"]); //call python script
+    // const python = spawn("python", ["extractJson.py"]); //call python script
+    const python = spawn("python", ["FBProphet.py"]);
 
     // collect data from script
     python.stdout.on("data", function (data) {
@@ -19,6 +20,9 @@ io.on("connection", (client) => {
       jsonLoad = largeDataSet.join("");
       console.log("Json Load values");
       console.log(jsonLoad); //this.setState
+      //Parse the Json Data
+      jsonLoad = jsonLoad.substring(jsonLoad.indexOf("[")); // possible bug here - i want to remove everything before [
+
       client.emit("testJsonData", jsonLoad);
     });
 

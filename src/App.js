@@ -19,7 +19,7 @@ class App extends Component {
 
   state = {
     timestamp: "no timestamp yet",
-    jsonData: "",
+    jsonData: "Retrieving Data",
   };
 
   render() {
@@ -27,8 +27,9 @@ class App extends Component {
       <div className="App">
         <p className="App-intro">
           This is the timer value: {this.state.timestamp}
-          Json Data Load Value : {this.state.jsonData}
         </p>
+        Json Data Load Value : {this.state.jsonData}
+        <p>Json Data Type : {typeof this.state.jsonData}</p>
       </div>
     );
   }
