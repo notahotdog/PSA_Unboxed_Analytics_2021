@@ -3,32 +3,17 @@ import logo from "./logo.svg";
 import "./App.css";
 import { subscribeToTimer } from "./test";
 import { jsonDataLoad } from "./test";
+import Line from "./LineGraph";
 
 class App extends Component {
   constructor(props) {
     super(props);
-    // this.getDate = this.getDate.bind(this);
 
     subscribeToTimer((err, timestamp) =>
       this.setState({
         timestamp,
       })
     );
-
-    //Upload Json Data
-    // updateJsonData = (err,jsonObj) => {
-    //   var obj = JSON.parse(jsonObj);
-    //   var date = [];
-    //   var yhat = [];
-    //   var lower = [];
-    //   var upper = [];
-
-    //   for (var i in obj) date.push["ds"];
-
-    //   this.setState({ date }); // set State the Date
-    // };
-
-    // this.updateJsonData = this.updateJsonData.bind(this);
 
     jsonDataLoad((err, jsonData) => {
       var obj = JSON.parse(jsonData);
@@ -65,17 +50,6 @@ class App extends Component {
     upper: [],
   };
 
-  // getDate() {
-  //   var obj = JSON.parse(this.state.jsonData);
-  //   var date = [];
-  //   for (var i in obj) {
-  //     console.log(obj[i].ds);
-  //     date.push(obj[i].ds);
-  //   }
-  //   this.setState({ date });
-  //   return <h1> {this.state.date}</h1>;
-  // }
-
   render() {
     return (
       <div className="App">
@@ -90,6 +64,12 @@ class App extends Component {
         <h1> Yhat</h1>
         yHat array : {this.state.yhat}
         yhat array format {typeof this.state.yhat}
+        <Line
+          date={this.state.date}
+          yhat={this.state.yhat}
+          lower={this.state.lower}
+          upper={this.state.upper}
+        />
       </div>
     );
   }
