@@ -2,13 +2,19 @@
 
 <br>
 To run
+<br>
 1. Clone this repo
+<br>
 2. Install FBprophet within your system 
 https://facebook.github.io/prophet/docs/installation.html
+<br>
 3.Download and place the merged.csv file within the root directory of this repo
 https://drive.google.com/file/d/1PQqX5-wmZOE5a5_VfCqbpfYZZVsQPxq6/view?usp=sharing
+<br>
 4. Run npm install - to install dependencies
+<br>
 5. Run npm start
+<br>
 6. Run node server.js
  
  
