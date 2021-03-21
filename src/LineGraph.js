@@ -23,7 +23,7 @@ export default class LineGraph extends Component {
           label: "yHat ",
           data: this.props.yhat,
           backgroundColor: [
-            "rgba(54, 162, 235, 0.2)",
+            "rgba(72, 143, 49, 0.2)",
             "rgba(75, 192, 192, 0.6)",
             "rgba(255, 99, 132, 0.6)",
           ],
@@ -32,14 +32,14 @@ export default class LineGraph extends Component {
         {
           label: "yhat_upper",
           data: this.props.upper,
-          backgroundColor: ["rgba(255, 206, 86, 0.2)"],
-          borderColor: ["rgba(255, 99, 132, 0.6)"],
+          backgroundColor: ["rgba(255, 60, 86, 0.2)"],
+          borderColor: ["rgba(222, 2, 91, 0.6)"],
         },
         {
           label: "yhat_lower",
           data: this.props.lower,
-          backgroundColor: ["rgba(255,255,255,1000)"],
-          borderColor: ["rgba(255, 99, 132, 0.6)"],
+          backgroundColor: ["rgba(2,99,132,1)"],
+          borderColor: ["rgba(2, 99, 132, 0.6)"],
         },
       ],
     };
