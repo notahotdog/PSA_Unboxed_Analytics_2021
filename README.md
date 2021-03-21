@@ -1,8 +1,8 @@
 <a href = "https://youtu.be/UwnG4pKGK2Y"> Product Demonstration Video </a>
 
 <br>
-**To run
-**<br>
+**To run**
+<br>
 1. Clone this repo
 <br>
 2. Install FBprophet within your system 
@@ -17,7 +17,8 @@ https://drive.google.com/file/d/1PQqX5-wmZOE5a5_VfCqbpfYZZVsQPxq6/view?usp=shari
 <br>
 6. Run node server.js
  
- 
+ <br>
+ <br>
 **Note:**
 <br>
 1.It may take up to 5-10 mins for FBprophet to load the data for the weekly/daily forecast. Meanwhile, there will be nothing displayed on the chart
