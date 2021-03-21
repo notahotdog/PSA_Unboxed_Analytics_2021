@@ -7,6 +7,7 @@ import { jsonDataLoad } from "./test";
 class App extends Component {
   constructor(props) {
     super(props);
+    // this.getDate = this.getDate.bind(this);
 
     subscribeToTimer((err, timestamp) =>
       this.setState({
@@ -29,9 +30,9 @@ class App extends Component {
 
     // this.updateJsonData = this.updateJsonData.bind(this);
 
-    //jsonDataLoad((err, jsonData) => this.setState({ jsonData }));
     jsonDataLoad((err, jsonData) => {
       var obj = JSON.parse(jsonData);
+      this.setState({ jsonData });
       var date = [];
       var yhat = [];
       var lower = [];
@@ -49,7 +50,9 @@ class App extends Component {
       this.setState({ yhat });
       this.setState({ lower });
       this.setState({ upper });
-      // this.setState({ jsonData });
+      console.log("TESTING");
+      console.log(date);
+      console.log(yhat);
     });
   }
 
@@ -57,7 +60,21 @@ class App extends Component {
     timestamp: "no timestamp yet",
     jsonData: "Retrieving Data",
     date: [],
+    yhat: [],
+    lower: [],
+    upper: [],
   };
+
+  // getDate() {
+  //   var obj = JSON.parse(this.state.jsonData);
+  //   var date = [];
+  //   for (var i in obj) {
+  //     console.log(obj[i].ds);
+  //     date.push(obj[i].ds);
+  //   }
+  //   this.setState({ date });
+  //   return <h1> {this.state.date}</h1>;
+  // }
 
   render() {
     return (
@@ -67,8 +84,10 @@ class App extends Component {
         </p>
         Json Data Load Value : {this.state.jsonData}
         <p>Json Data Type : {typeof this.state.jsonData}</p>
+        <h1> Date</h1>
         Date array : {this.state.date}
         Date array format {typeof this.state.date}
+        <h1> Yhat</h1>
         yHat array : {this.state.yhat}
         yhat array format {typeof this.state.yhat}
       </div>
