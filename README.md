@@ -1,4 +1,4 @@
-<a href = "https://youtu.be/UwnG4pKGK2Y"> Sample of product Demo </a>
+<a href = "https://youtu.be/UwnG4pKGK2Y"> Product Demonstration Video </a>
 
 <br>
 
