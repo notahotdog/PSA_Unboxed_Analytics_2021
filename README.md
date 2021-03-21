@@ -15,3 +15,6 @@ https://facebook.github.io/prophet/docs/installation.html
 5. Run npm start
 
 5. Run node server.js
+
+
+//It may take up to 5-10 mins for FBprophet to load the data for the weekly/daily forecast
