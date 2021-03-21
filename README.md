@@ -1,11 +1,17 @@
-<a href = "https://medium.com/dailyjs/combining-react-with-socket-io-for-real-time-goodness-d26168429a34">This webcast goes through this example code </a>
+<a href = "https://youtu.be/UwnG4pKGK2Y"> Sample of product Demo </a>
 
 <br>
 
+To run
+1. Clone this repo
 
-npm install
-<br>
-node server.js
-<br>
-npm start
-<br>
+2. Install FBprophet within your system
+https://facebook.github.io/prophet/docs/installation.html
+
+3. Download and place the merged.csv file within the root directory of this repo
+
+4. Run npm install - to install dependencies
+
+5. Run npm start
+
+5. Run node server.js
